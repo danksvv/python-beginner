@@ -15,7 +15,8 @@ def count_vowels(text: str) -> int:
     :return: the number total vowel count as a integer
     """
     if not isinstance(text, str):
-        raise TypeError(f"Please only use strings, {type(text)} is not valid type.")
+        raise TypeError(f"Please only use strings, {
+                        type(text)} is not valid type.")
 
     vowels_count = 0
     for char in text:
