@@ -93,6 +93,7 @@ def squirtle_attack() -> int:
     return 0
 
 
+# function to select a random attack and return the damage
 def random_attack(character: str) -> int:
     if character == "a":
         attack_squirtle_list = [18, 6, 8]
@@ -101,6 +102,11 @@ def random_attack(character: str) -> int:
         attack_pikachu_list = [12, 8, 2]
         damage = attack_pikachu_list[randint(0, 2)]
     return damage
+
+
+# function to print the life bar of the Pokemon
+def life_bar(hp: int) -> str:
+    return "♥️" * (hp // 4)
 
 
 def main() -> None:
@@ -115,8 +121,8 @@ def main() -> None:
     info_pokemon(character)
 
     while pikachu_hp > 0 and squirtle_hp > 0:
-        print(f"Squirtle's HP: {squirtle_hp}")
-        print(f"Pikachu's HP: {pikachu_hp}")
+        print("Squirtle's HP: \t", life_bar(squirtle_hp), f"\t{squirtle_hp}:.2%")
+        print("Pikachu's HP: \t", life_bar(pikachu_hp), f"\t{pikachu_hp}:.2%")
 
         if character == "a":
             hurt = pikachu_attack()
