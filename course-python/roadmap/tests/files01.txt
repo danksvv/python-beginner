@@ -1,0 +1,3 @@
+name: alcohol
+age: 40
+languages: python, java, c#

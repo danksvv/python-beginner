@@ -35,10 +35,15 @@ def create_file() -> str:
 def enter_data() -> dict:
     data = {}
     data["name"] = input("Enter your name: ")
-    data["age"] = input("Enter your age: ")
-    data["favorite_programming_language"] = input(
-        "Enter your favorite programming language: "
-    )
+    while True:
+        try:
+            data["age"] = int(input("Enter your age: "))
+            break
+        except ValueError:
+            print("The age must be a number")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+    data["languages"] = input("Enter your favorite programming language: ")
     return data
 
 
@@ -71,11 +76,20 @@ def main():
         if option == "1":
             file_name = create_file()
         elif option == "2":
-            write_file(file_name)
+            if file_name:
+                write_file(file_name)
+            else:
+                print("You must create a file first")
         elif option == "3":
-            read_file(file_name)
+            if file_name:
+                read_file(file_name)
+            else:
+                print("You must create a file first")
         elif option == "4":
-            delete_file(file_name)
+            if file_name:
+                delete_file(file_name)
+            else:
+                print("You must create a file first")
         elif option == "5":
             break
         else:
