@@ -1,0 +1,3 @@
+producto: gaseosa,cantidad_vendida: 10,precio_unidad: 2.8, precio_total: 28.0
+producto: carne,cantidad_vendida: 2,precio_unidad: 4.3, precio_total: 8.6
+producto: pescado,cantidad_vendida: 5,precio_unidad: 10.3, precio_total: 51.5
